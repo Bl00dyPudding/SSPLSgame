@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Game</title>
+</head>
+<body>
+  <main>
+    <section id="greeting">
+      <p>Привет! <br>
+        Я предлагаю тебе отвлечься от повседневной суеты и сыграть игру. <br>
+        Правила достаточно просты: <br>
+        Ножницы режут бумагу.
+        Бумага заворачивает камень.
+        Камень давит ящерицу,
+        а ящерица травит Спока,
+        в то время как Спок ломает ножницы,
+        которые, в свою очередь, отрезают голову ящерице,
+        которая ест бумагу, на которой улики против Спока,
+        который испаряет камень,
+        а камень, разумеется, затупляет ножницы. <br>
+        Одержи 5 побед подряд и получи приз!
+      </p>
+      <button class="button" id="start">Погнали</button>
+    </section>
+    <section id="battle" class="battle hidden">
+      <h1 class="heading">камень ножницы бумага ящерица спок</h1>
+      <div class="battle__info">
+        <span id="hint">?</span>
+        <p>Раунд № <span id="round">1</span></p>
+        <p>Победы подряд: <span id="wins">0</span> / 5</p>
+      </div>
+      <div class="battle__result">
+        <div id="computer"></div>
+        <div id="player"></div>
+        <div id="result"></div>
+      </div>
+      <div class="battle__buttons">
+        <button class="button clickable" id="stone">Камень</button>
+        <button class="button clickable" id="scissors">Ножницы</button>
+        <button class="button clickable" id="paper">Бумага</button>
+        <button class="button clickable" id="lizard">Ящерица</button>
+        <button class="button clickable" id="spock">Спок</button>
+      </div>
+    </section>
+    <section id="win" class="hidden">
+      <p id="prize"></p>
+      <button id="restart">Заново</button>
+    </section>
+  </main>
+<script src="script/script.js" charset="utf-8"></script>
+</body>
+</html>

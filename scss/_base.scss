@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import "colors";
+
+body {
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5em;
+  color: $color-text;
+  background-color: $color-thumb;
+  background-image: url("../img/what-the-hex.png");
+}
+
+.main-content {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 25% 1fr 1fr;
+  padding: 0 1em;
+  &__heading {
+    margin: 0.2em auto;
+    text-transform: uppercase;
+    font-size: 5rem;
+    text-align: center;
+  }
+  &__text {
+    margin: 0.5rem;
+    text-align: center;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.generator {
+  margin: 1rem auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+          'range checkbox'
+          'button button';
+  & .range {
+    margin: auto;
+  }
+  & #generatePassword {
+    grid-area: button;
+  }
+  &__checkboxes {
+    display: flex;
+    & div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  & button {
+    margin: 0 auto;
+  }
+}
+
+input[type=text] {
+  width: 3rem;
+  padding: 0 0.9rem;
+  box-sizing: border-box;
+  transition: .2s;
+  margin: 0 1.2rem;
+  border: 1px solid $color-background;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+  }
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 10rem;
+  transition: .2s;
+  &:focus {
+    outline: none;
+    box-shadow: 0 5px 1px 1px rgba(0,0,0,.2);
+    border-radius: 13px;
+  }
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 26px;
+  width: 150px;
+  border-radius: 13px;
+  background: $color-main;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+  transition: .2s;
+  position: relative;
+  top: 4px;
+  padding: 0 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  border-color: $color-thumb;
+  cursor: pointer;
+  background: $color-thumb;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  transition: .2s;
+  position: absolute;
+  top: 2px;
+}
+
+.checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 20px;
+}
+
+.checkbox + label {
+  position: relative;
+  padding: 0 0 0 60px;
+  cursor: pointer;
+  margin:  1rem;
+}
+
+.checkbox + label:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 50px;
+  height: 26px;
+  border-radius: 13px;
+  background: $color-background;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+  transition: .2s;
+}
+
+.checkbox + label:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  background: $color-thumb;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  transition: .2s;
+}
+
+.checkbox:checked + label:before {
+  background: $color-main;
+}
+
+.checkbox:checked + label:after {
+  left: 26px;
+}
+
+.checkbox:focus + label:before {
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.2), 0 0 0 3px rgba(0,0,0,.2);
+}
+
+.generatedPassword {
+  margin: 2rem auto 0;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .password {
+    display: flex;
+    flex-direction: column;
+  }
+  & #toCopy {
+    padding: 1rem;
+    background: $color-thumb;
+    border: 1px solid $color-background;
+    font-size: 2rem;
+    margin: 0.5rem;
+    text-align: center;
+  }
+  & .copy {
+    margin: 0 auto;
+  }
+}
+
+button {
+  background: $color-main;
+  width: 10rem;
+  height: 2.5rem;
+  transition: .2s;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: $color-thumb;
+  &:hover {
+    background: lighten($color-main, 5%);
+  }
+  &:focus {
+    box-shadow: 0 0 2px 2px rgba(0,0,0,.2);
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+    background: darken($color-main, 5%);
+  }
+  &:disabled {
+    background: $color-background;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .main-content {
+    max-width: 100%;
+    grid-template-rows: 25% auto auto;
+    padding: 0;
+
+    &__heading {
+      margin-top: 1rem;
+      font-size: 2.5rem;
+    }
+
+    &__text {
+      font-size: 1.4rem;
+      word-wrap: break-word;
+      margin: 0.5rem 0;
+    }
+  }
+
+  .generator {
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'range' 'checkbox' 'button';
+
+    & .range {
+      width: 100%;
+      box-sizing: border-box;
+      & label {
+        margin-left: 1rem;
+      }
+
+      & #range {
+        width: 96%;
+        margin: 0.5rem 1.5%;
+      }
+    }
+    &__checkboxes {
+      justify-content: center;
+      & div {
+        justify-content: flex-start;
+      }
+    }
+
+  }
+
+  .generatedPassword {
+    & .password {
+      align-items: center;
+    }
+    & #toCopy {
+      word-break: break-all;
+      box-sizing: border-box;
+      //width: 90%;
+      max-width: 90vw;
+    }
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .generator {
+    &__checkboxes {
+      flex-direction: column;
+    }
+  }
+}

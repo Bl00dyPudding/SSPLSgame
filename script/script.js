@@ -1,6 +1,28 @@
 const closeGreeting = () => {
     document.getElementById('greeting').remove();
     document.getElementById('battle').classList.remove('hidden');
+    let array = document.querySelectorAll('.clickable');
+    array.forEach(elem => elem.disabled = false);
+    console.log(array);
+};
+
+const showHint = () => {
+    document.getElementById('hintBox').classList.remove('hidden');
+    document.getElementById('hintBox').innerText =
+        'Ножницы режут бумагу.\n' +
+        'Бумага заворачивает камень.\n' +
+        'Камень давит ящерицу,\n' +
+        'а ящерица травит Спока,\n' +
+        'в то время как Спок ломает ножницы,\n' +
+        'которые, в свою очередь, отрезают голову ящерице,\n' +
+        'которая ест бумагу, на которой улики против Спока,\n' +
+        'который испаряет камень,\n' +
+        'а камень, разумеется, затупляет ножницы.';
+    const closeHint = () => {
+        document.getElementById('hintBox').classList.add('hidden');
+        document.getElementById('hintBox').innerText = '';
+    };
+    setTimeout(closeHint, 2000);
 };
 
 const randomInteger = (min, max) => {
@@ -12,7 +34,9 @@ const reset = () => {
     document.getElementById('round').innerText = `1`;
     let array = document.querySelectorAll('.clickable');
     array.forEach(elem => elem.disabled = false);
+    document.getElementById('prize').innerText = '';
     document.getElementById('win').classList.add('hidden');
+
 };
 
 const roundCounter = (param) => {
@@ -139,6 +163,10 @@ const mouseClick = evt => {
 
     if (evt.target.id === 'restart') {
         reset();
+    }
+
+    if (evt.target.id === 'hint') {
+        showHint();
     }
 
 };

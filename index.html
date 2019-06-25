@@ -28,7 +28,7 @@
     <section id="battle" class="battle hidden">
       <h1 class="heading">камень ножницы бумага ящерица спок</h1>
       <div class="battle__info">
-        <span id="hint">?</span>
+        <span id="hint">? hint ?</span>
         <p>Раунд № <span id="round">1</span></p>
         <p>Победы подряд: <span id="wins">0</span> / 5</p>
       </div>
@@ -38,12 +38,14 @@
         <div id="result"></div>
       </div>
       <div class="battle__buttons">
-        <button class="button clickable" id="stone">Камень</button>
-        <button class="button clickable" id="scissors">Ножницы</button>
-        <button class="button clickable" id="paper">Бумага</button>
-        <button class="button clickable" id="lizard">Ящерица</button>
-        <button class="button clickable" id="spock">Спок</button>
+        <button class="button clickable" id="stone" disabled>Камень</button>
+        <button class="button clickable" id="scissors" disabled>Ножницы</button>
+        <button class="button clickable" id="paper" disabled>Бумага</button>
+        <button class="button clickable" id="lizard" disabled>Ящерица</button>
+        <button class="button clickable" id="spock" disabled>Спок</button>
       </div>
+    </section>
+    <section id="hintBox" class="hidden">
     </section>
     <section id="win" class="hidden">
       <p id="prize"></p>

@@ -3,7 +3,6 @@ const closeGreeting = () => {
     document.getElementById('battle').classList.remove('hidden');
     let array = document.querySelectorAll('.clickable');
     array.forEach(elem => elem.disabled = false);
-    console.log(array);
 };
 
 const showHint = () => {
@@ -36,7 +35,7 @@ const reset = () => {
     array.forEach(elem => elem.disabled = false);
     document.getElementById('prize').innerText = '';
     document.getElementById('win').classList.add('hidden');
-
+    document.getElementById('win').classList.remove('modal');
 };
 
 const roundCounter = (param) => {
@@ -86,6 +85,7 @@ const renderPage = (player, computer, text, isWin) => {
         let array = document.querySelectorAll('.clickable');
         array.forEach(elem => elem.disabled = true);
         document.getElementById('win').classList.remove('hidden');
+        document.getElementById('win').classList.add('modal');
         let round = document.getElementById('round').innerText;
         if (round <= 10) {
             document.getElementById('prize').innerText =

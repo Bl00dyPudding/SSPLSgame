@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes color-change {
+  from {
+    color: #e467b3;
+  }
+  to {
+    color: darkmagenta;
+  }
+}
+body {
+  font-family: 'Poiret One', cursive;
+  font-size: 1.2rem;
+}
+
+.button {
+  width: 10rem;
+  height: 3rem;
+  background: #6a5acd;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+}
+.button:hover {
+  background-color: #5846c7;
+}
+.button:active {
+  background-color: #4b39bb;
+  position: relative;
+  top: 1px;
+}
+.button:disabled {
+  background-color: #bbbbbb;
+  color: #cccccc;
+}
+
+.button__hint {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #6a5acd;
+  line-height: 3rem;
+  font-size: 2rem;
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  color: #fff;
+  border: none;
+}
+
+main {
+  background-color: #cdd1da;
+}
+
+.battle {
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 15vh 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "header header" "battle__info battle__result" "battle__buttons battle__buttons";
+}
+.battle__heading {
+  text-align: center;
+  text-transform: uppercase;
+  animation-name: color-change;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  grid-area: header;
+}
+.battle__info {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  grid-area: battle__info;
+}
+.battle__info p {
+  margin: 0;
+}
+.battle__result {
+  grid-area: battle__result;
+}
+.battle__buttons {
+  grid-area: battle__buttons;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal-content {
+  display: block;
+  width: 80%;
+  color: #fff;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+  font-size: 1.2rem;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
